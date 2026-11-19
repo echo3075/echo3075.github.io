@@ -1,0 +1,1735 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>91cao草网官网_原创社区,记录每一种生长</title>
+<meta name="description" content="91cao草网官网是面向自然生活与原创影像的品牌内容社区，以高清原创视频、创作者生态与企业动态为核心，持续为品质用户提供值得信赖的官方内容。">
+<meta name="theme-color" content="#1f3d2b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231f3d2b'/%3E%3Cpath d='M32 52C32 34 44 24 52 22C52 40 44 50 32 52Z' fill='%23c9e265'/%3E%3Cpath d='M32 52C32 36 22 26 12 24C12 40 22 50 32 52Z' fill='%23e8a33d'/%3E%3C/svg%3E">
+<style>
+:root{
+  --cao-deep:#1f3d2b;
+  --cao-deep-2:#16301f;
+  --cao-moss:#4f7a52;
+  --cao-leaf:#c9e265;
+  --cao-amber:#e8a33d;
+  --cao-earth:#8c6b4a;
+  --cao-paper:#f7f5ee;
+  --cao-paper-2:#eeeadf;
+  --cao-ink:#26302a;
+  --cao-muted:#6b7568;
+  --cao-line:rgba(31,61,43,.14);
+  --cao-shadow:0 16px 40px -22px rgba(22,48,31,.55);
+  --cao-radius:18px;
+  --cao-header-h:64px;
+  --cao-anno-h:38px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--cao-paper);
+  color:var(--cao-ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+h1,h2,h3,h4{margin:0;line-height:1.3;font-weight:700}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--cao-amber);outline-offset:2px;border-radius:6px}
+
+.cao-skip{
+  position:absolute;left:-9999px;top:0;background:var(--cao-deep);color:#fff;
+  padding:10px 18px;z-index:999;border-radius:0 0 10px 0;
+}
+.cao-skip:focus{left:0}
+
+/* ============ 吸顶：公告条 + 页头 ============ */
+.cao-sticky{
+  position:sticky;top:0;z-index:120;
+  background:rgba(247,245,238,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--cao-line);
+  box-shadow:0 10px 30px -26px rgba(22,48,31,.7);
+}
+.cao-anno{
+  height:var(--cao-anno-h);
+  display:flex;align-items:center;
+  background:linear-gradient(90deg,var(--cao-deep) 0%,var(--cao-moss) 55%,#6f8f4a 100%);
+  color:#f0f4e4;
+  font-size:13px;
+  overflow:hidden;
+}
+.cao-anno-inner{
+  width:min(1200px,94vw);margin:0 auto;
+  display:flex;align-items:center;gap:14px;
+  white-space:nowrap;overflow:hidden;
+}
+.cao-anno-tag{
+  flex:none;background:var(--cao-leaf);color:var(--cao-deep-2);
+  font-weight:700;font-size:12px;padding:1px 9px;border-radius:999px;letter-spacing:.06em;
+}
+.cao-anno-track{
+  display:flex;gap:38px;overflow:hidden;
+  animation:cao-anno-move 26s linear infinite;
+  flex:1;
+}
+.cao-anno-track span{flex:none;opacity:.95}
+.cao-anno-track b{color:var(--cao-leaf);font-weight:600}
+.cao-anno:hover .cao-anno-track{animation-play-state:paused}
+@keyframes cao-anno-move{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+.cao-anno-more{
+  flex:none;font-size:12px;color:#eaf2d6;border:1px solid rgba(233,242,214,.5);
+  padding:1px 10px;border-radius:999px;
+}
+.cao-anno-more:hover{background:rgba(233,242,214,.16)}
+
+.cao-header{
+  height:var(--cao-header-h);
+  display:flex;align-items:center;
+  width:min(1200px,94vw);margin:0 auto;
+  gap:22px;
+}
+.cao-brand{display:flex;align-items:center;gap:10px;flex:none}
+.cao-brand-mark{
+  width:38px;height:38px;border-radius:12px;
+  background:radial-gradient(circle at 30% 25%,#3f6b45,#16301f 80%);
+  display:grid;place-items:center;
+  box-shadow:inset 0 0 0 1px rgba(201,226,101,.35);
+}
+.cao-brand-mark svg{width:22px;height:22px}
+.cao-brand-txt strong{
+  display:block;font-size:16px;letter-spacing:.02em;color:var(--cao-deep-2);
+  line-height:1.2;
+}
+.cao-brand-txt small{display:block;font-size:11px;color:var(--cao-muted);letter-spacing:.16em}
+
+.cao-nav{display:flex;align-items:center;gap:4px;flex:1;flex-wrap:nowrap;overflow:hidden}
+.cao-nav a{
+  font-size:14px;padding:8px 12px;border-radius:999px;color:#3b473d;
+  transition:background .2s,color .2s;white-space:nowrap;
+}
+.cao-nav a:hover{background:var(--cao-paper-2);color:var(--cao-deep-2)}
+.cao-nav a.is-active{background:var(--cao-deep);color:#f2f6e5}
+
+.cao-header-tools{display:flex;align-items:center;gap:10px;flex:none}
+.cao-search{
+  display:flex;align-items:center;gap:6px;
+  background:#fff;border:1px solid var(--cao-line);border-radius:999px;
+  padding:5px 6px 5px 14px;
+  transition:box-shadow .2s,border-color .2s;
+}
+.cao-search:focus-within{border-color:var(--cao-moss);box-shadow:0 0 0 4px rgba(79,122,82,.14)}
+.cao-search input{
+  border:0;outline:0;background:none;width:132px;font-size:13.5px;color:var(--cao-ink);
+}
+.cao-search button{
+  background:var(--cao-deep);color:#f1f5e2;border-radius:999px;
+  font-size:12.5px;padding:5px 13px;
+}
+.cao-search button:hover{background:var(--cao-deep-2)}
+.cao-burger{
+  display:none;width:42px;height:42px;border-radius:12px;
+  border:1px solid var(--cao-line);background:#fff;
+  align-items:center;justify-content:center;flex-direction:column;gap:5px;
+}
+.cao-burger i{display:block;width:18px;height:2px;background:var(--cao-deep-2);border-radius:2px;transition:.25s}
+.cao-burger.is-open i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.cao-burger.is-open i:nth-child(2){opacity:0}
+.cao-burger.is-open i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.cao-mobile-nav{
+  display:none;border-top:1px solid var(--cao-line);background:var(--cao-paper);
+  padding:10px 5vw 18px;
+}
+.cao-mobile-nav.is-open{display:block}
+.cao-mobile-nav a{
+  display:block;padding:11px 8px;border-radius:10px;font-size:15px;color:#33403a;
+  border-bottom:1px dashed var(--cao-line);
+}
+.cao-mobile-nav a:last-child{border-bottom:0}
+.cao-mobile-nav a:hover{background:var(--cao-paper-2)}
+
+/* ============ 通用容器 ============ */
+.cao-main{display:block}
+.cao-sec{width:min(1200px,94vw);margin:0 auto;padding:72px 0;scroll-margin-top:calc(var(--cao-anno-h) + var(--cao-header-h) + 14px)}
+.cao-sec--tight{padding-top:54px}
+.cao-sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:30px;flex-wrap:wrap}
+.cao-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:.2em;color:var(--cao-moss);
+  text-transform:uppercase;font-weight:600;margin-bottom:10px;
+}
+.cao-kicker::before{content:"";width:22px;height:2px;background:var(--cao-amber);border-radius:2px}
+.cao-sec-head h2{font-size:clamp(22px,3vw,31px);color:var(--cao-deep-2);letter-spacing:.01em}
+.cao-sec-head h2 em{font-style:normal;color:var(--cao-moss)}
+.cao-sec-desc{color:var(--cao-muted);font-size:14.5px;max-width:560px}
+.cao-link-more{font-size:14px;color:var(--cao-deep);border-bottom:1.5px solid var(--cao-leaf);padding-bottom:2px;font-weight:600}
+.cao-link-more:hover{color:var(--cao-moss);border-bottom-color:var(--cao-amber)}
+
+/* ============ 首屏 ============ */
+.cao-hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(1100px 460px at 88% -12%,rgba(201,226,101,.30),transparent 62%),
+    radial-gradient(760px 420px at 4% 106%,rgba(232,163,61,.22),transparent 64%),
+    linear-gradient(160deg,#f9f8f1,#eceee0 70%);
+  border-bottom:1px solid var(--cao-line);
+}
+.cao-hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(31,61,43,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(31,61,43,.05) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(circle at 50% 30%,#000,transparent 78%);
+}
+.cao-hero-inner{
+  position:relative;z-index:2;
+  width:min(1200px,94vw);margin:0 auto;
+  display:grid;grid-template-columns:1.04fr .96fr;gap:46px;align-items:center;
+  padding:62px 0 68px;
+}
+.cao-hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;border:1px solid var(--cao-line);
+  border-radius:999px;padding:5px 14px 5px 6px;
+  font-size:12.5px;color:var(--cao-deep);font-weight:600;
+  box-shadow:var(--cao-shadow);
+}
+.cao-hero-badge span{
+  background:var(--cao-leaf);color:var(--cao-deep-2);
+  padding:1px 9px;border-radius:999px;font-size:11.5px;letter-spacing:.06em;
+}
+.cao-hero h1{
+  font-size:clamp(34px,5.2vw,58px);
+  letter-spacing:.01em;color:var(--cao-deep-2);
+  margin:20px 0 16px;
+  line-height:1.16;
+}
+.cao-hero h1 .cao-h1-hi{
+  color:var(--cao-deep);
+  background-image:linear-gradient(transparent 68%,var(--cao-leaf) 68%);
+  padding:0 4px;
+}
+.cao-hero-lead{font-size:16.5px;color:#3d4a40;max-width:520px}
+.cao-hero-desc{font-size:14.5px;color:var(--cao-muted);margin-top:14px;max-width:540px}
+.cao-hero-actions{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.cao-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:999px;font-size:14.5px;font-weight:600;
+  transition:transform .18s,box-shadow .18s,background .18s;
+}
+.cao-btn:active{transform:translateY(1px)}
+.cao-btn--primary{background:var(--cao-deep);color:#f4f7e9;box-shadow:0 14px 26px -16px rgba(22,48,31,.9)}
+.cao-btn--primary:hover{background:var(--cao-deep-2)}
+.cao-btn--ghost{background:#fff;color:var(--cao-deep);border:1px solid var(--cao-line)}
+.cao-btn--ghost:hover{border-color:var(--cao-moss);background:#fdfcf6}
+.cao-hero-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+  margin-top:34px;padding-top:24px;border-top:1px dashed var(--cao-line);max-width:520px;
+}
+.cao-hero-stats b{display:block;font-size:24px;color:var(--cao-deep-2);letter-spacing:.01em}
+.cao-hero-stats small{font-size:12.5px;color:var(--cao-muted);letter-spacing:.04em}
+
+.cao-hero-visual{position:relative}
+.cao-hero-frame{
+  border-radius:26px;overflow:hidden;
+  border:1px solid rgba(31,61,43,.16);
+  box-shadow:0 34px 70px -40px rgba(22,48,31,.85);
+  background:#dde3cf;
+}
+.cao-hero-frame img{width:100%;height:auto;aspect-ratio:16/11;object-fit:cover}
+.cao-hero-chip{
+  position:absolute;left:-14px;bottom:26px;
+  background:#fff;border:1px solid var(--cao-line);border-radius:16px;
+  padding:12px 16px;box-shadow:var(--cao-shadow);
+  display:flex;align-items:center;gap:10px;
+  font-size:13px;color:var(--cao-deep-2);max-width:250px;
+}
+.cao-hero-chip em{
+  font-style:normal;background:var(--cao-amber);color:#3a2703;
+  font-size:11px;font-weight:700;padding:1px 8px;border-radius:999px;flex:none;
+}
+.cao-hero-badge-2{
+  position:absolute;right:14px;top:-14px;
+  background:var(--cao-deep);color:#eaf2d6;border-radius:14px;
+  padding:8px 15px;font-size:12.5px;box-shadow:var(--cao-shadow);letter-spacing:.04em;
+}
+
+/* ============ 关键词解析长文 ============ */
+.cao-about{background:linear-gradient(180deg,#f7f5ee,#f2f0e6)}
+.cao-about-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.cao-about-body p{font-size:15px;color:#3f4a41;margin-bottom:16px}
+.cao-about-body p strong{color:var(--cao-deep-2)}
+.cao-about-body h3{font-size:17px;margin:26px 0 10px;color:var(--cao-deep)}
+.cao-about-side{display:grid;gap:16px;position:sticky;top:calc(var(--cao-anno-h) + var(--cao-header-h) + 20px)}
+.cao-mini-card{
+  background:#fff;border:1px solid var(--cao-line);border-radius:var(--cao-radius);
+  padding:20px 22px;box-shadow:var(--cao-shadow);
+}
+.cao-mini-card h4{font-size:14.5px;color:var(--cao-deep);margin-bottom:10px;letter-spacing:.04em}
+.cao-mini-card li{font-size:13.5px;color:#4a564c;padding:7px 0;border-bottom:1px dashed var(--cao-line);display:flex;gap:10px}
+.cao-mini-card li:last-child{border-bottom:0}
+.cao-mini-card li b{color:var(--cao-amber);font-weight:700;flex:none}
+.cao-quote{
+  background:linear-gradient(140deg,var(--cao-deep),#3b6440);
+  color:#eef4db;border-radius:var(--cao-radius);padding:24px 24px 22px;
+  font-size:14.5px;line-height:1.85;
+  box-shadow:0 26px 48px -34px rgba(22,48,31,.95);
+}
+.cao-quote strong{display:block;color:var(--cao-leaf);font-size:13px;letter-spacing:.14em;margin-bottom:10px}
+
+/* ============ 焦点视频 ============ */
+.cao-feature-grid{display:grid;grid-template-columns:1.28fr 1fr;gap:22px}
+.cao-v-card{
+  background:#fff;border:1px solid var(--cao-line);border-radius:var(--cao-radius);
+  overflow:hidden;box-shadow:var(--cao-shadow);
+  transition:transform .22s,box-shadow .22s,border-color .22s;
+  display:flex;flex-direction:column;
+}
+.cao-v-card:hover{transform:translateY(-4px);border-color:rgba(79,122,82,.42);box-shadow:0 26px 52px -30px rgba(22,48,31,.6)}
+.cao-v-thumb{position:relative;overflow:hidden;background:#dfe4d3}
+.cao-v-thumb>img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .5s}
+.cao-v-card:hover .cao-v-thumb>img{transform:scale(1.045)}
+.cao-v-play{
+  position:absolute;inset:0;display:grid;place-items:center;
+  background:linear-gradient(180deg,rgba(22,48,31,.05),rgba(22,48,31,.42));
+  opacity:0;transition:opacity .25s;
+}
+.cao-v-card:hover .cao-v-play{opacity:1}
+.cao-v-play i{
+  width:52px;height:52px;border-radius:50%;background:rgba(247,245,238,.94);
+  display:grid;place-items:center;box-shadow:0 10px 28px rgba(10,26,16,.4);
+}
+.cao-v-play i::after{
+  content:"";width:0;height:0;border-left:15px solid var(--cao-deep);
+  border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px;
+}
+.cao-v-tags{position:absolute;left:12px;top:12px;display:flex;gap:6px;flex-wrap:wrap}
+.cao-v-tags span{
+  font-size:11.5px;background:rgba(22,48,31,.82);color:#e9f1d8;
+  padding:2px 9px;border-radius:999px;backdrop-filter:blur(4px);
+}
+.cao-v-tags span.cao-tag--amber{background:rgba(232,163,61,.94);color:#3a2703;font-weight:700}
+.cao-v-dur{
+  position:absolute;right:12px;bottom:12px;font-size:11.5px;color:#f0f4e2;
+  background:rgba(22,48,31,.78);padding:2px 8px;border-radius:6px;letter-spacing:.04em;
+}
+.cao-v-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:9px;flex:1}
+.cao-v-body h3{font-size:17px;color:var(--cao-deep-2);line-height:1.45}
+.cao-v-card--lg .cao-v-body h3{font-size:20px}
+.cao-v-sum{font-size:13.5px;color:var(--cao-muted);line-height:1.7}
+.cao-v-meta{
+  display:flex;align-items:center;gap:8px;margin-top:auto;
+  padding-top:12px;border-top:1px dashed var(--cao-line);flex-wrap:wrap;
+}
+.cao-avatar{
+  width:30px;height:30px;border-radius:50%;flex:none;
+  display:grid;place-items:center;font-size:12.5px;font-weight:700;color:#fff;
+  letter-spacing:.02em;box-shadow:inset 0 0 0 2px rgba(255,255,255,.5);
+}
+.cao-v-author{font-size:12.5px;color:#415046;font-weight:600}
+.cao-v-views{font-size:12px;color:#8a948a;margin-left:auto}
+.cao-v-ops{display:flex;gap:4px;width:100%;margin-top:4px}
+.cao-op{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:12.5px;color:#5d6a5f;border:1px solid var(--cao-line);
+  background:#fbfaf4;border-radius:999px;padding:4px 11px;transition:.18s;
+}
+.cao-op:hover{border-color:var(--cao-moss);color:var(--cao-deep)}
+.cao-op.is-liked{background:#eef6dc;border-color:var(--cao-leaf);color:var(--cao-deep);font-weight:600}
+.cao-op.is-saved{background:#fdf1e0;border-color:#f0c58a;color:#8a5610;font-weight:600}
+.cao-feature-sm{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.cao-feature-sm .cao-v-body h3{font-size:14.5px}
+.cao-feature-sm .cao-v-sum{display:none}
+.cao-feature-sm .cao-v-views{margin-left:0}
+
+/* ============ 专题 ============ */
+.cao-topics{background:linear-gradient(180deg,#f2f0e6,#f7f5ee)}
+.cao-topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cao-topic{
+  position:relative;border-radius:var(--cao-radius);overflow:hidden;
+  border:1px solid var(--cao-line);background:#fff;
+  box-shadow:var(--cao-shadow);display:flex;flex-direction:column;
+  transition:transform .22s,box-shadow .22s;
+}
+.cao-topic:hover{transform:translateY(-5px);box-shadow:0 28px 56px -34px rgba(22,48,31,.7)}
+.cao-topic img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.cao-topic-body{padding:18px 20px 20px}
+.cao-topic-state{
+  display:inline-flex;align-items:center;gap:6px;font-size:11.5px;
+  color:#5a6a52;background:#eef3df;border-radius:999px;padding:2px 10px;margin-bottom:9px;font-weight:600;
+}
+.cao-topic-state i{width:6px;height:6px;border-radius:50%;background:var(--cao-moss);display:inline-block}
+.cao-topic-state--hot{color:#8a5610;background:#fdf1e0}
+.cao-topic-state--hot i{background:var(--cao-amber)}
+.cao-topic-body h3{font-size:16.5px;color:var(--cao-deep-2);margin-bottom:8px}
+.cao-topic-body p{font-size:13.5px;color:var(--cao-muted);line-height:1.7}
+.cao-topic-foot{
+  display:flex;align-items:center;justify-content:space-between;margin-top:14px;
+  padding-top:12px;border-top:1px dashed var(--cao-line);font-size:12.5px;color:#7b857a;
+}
+.cao-topic-foot b{color:var(--cao-deep);font-weight:700}
+
+/* ============ 创作者矩阵 ============ */
+.cao-creators{}
+.cao-creator-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.cao-creator{
+  background:#fff;border:1px solid var(--cao-line);border-radius:var(--cao-radius);
+  padding:22px 20px;box-shadow:var(--cao-shadow);
+  display:flex;flex-direction:column;gap:10px;
+  transition:transform .2s,border-color .2s;
+}
+.cao-creator:hover{transform:translateY(-3px);border-color:rgba(79,122,82,.4)}
+.cao-creator-top{display:flex;align-items:center;gap:12px}
+.cao-avatar--lg{width:46px;height:46px;font-size:16px}
+.cao-creator-name{font-size:15.5px;font-weight:700;color:var(--cao-deep-2)}
+.cao-creator-field{font-size:12px;color:var(--cao-moss);letter-spacing:.04em}
+.cao-creator p{font-size:13px;color:var(--cao-muted);line-height:1.7;flex:1}
+.cao-creator-stats{display:flex;gap:16px;font-size:12.5px;color:#5d6a5f;padding-top:10px;border-top:1px dashed var(--cao-line)}
+.cao-creator-stats b{color:var(--cao-deep);font-weight:700}
+.cao-creator-more{font-size:12.5px;color:var(--cao-moss);font-weight:600;text-align:right}
+.cao-creator-more:hover{color:var(--cao-amber)}
+
+/* ============ 影像墙 ============ */
+.cao-wall{background:#f2f0e6}
+.cao-wall-grid{
+  display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:96px;gap:14px;
+}
+.cao-wall-item{
+  position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--cao-line);
+  background:#dfe4d3;cursor:pointer;
+}
+.cao-wall-item img{width:100%;height:100%;object-fit:cover;transition:transform .45s}
+.cao-wall-item:hover img{transform:scale(1.06)}
+.cao-wall-item figcaption{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:22px 12px 10px;font-size:12.5px;color:#f2f6e6;font-weight:600;
+  background:linear-gradient(transparent,rgba(22,48,31,.82));
+}
+.cao-wall-item--w2{grid-column:span 2}
+.cao-wall-item--h2{grid-row:span 2}
+.cao-wall-item--w3{grid-column:span 3}
+.cao-wall-actions{display:flex;justify-content:center;margin-top:28px}
+
+/* ============ 故事随笔 + 数据榜单 ============ */
+.cao-mixed-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:start}
+.cao-story-list{display:grid;gap:16px}
+.cao-story{
+  background:#fff;border:1px solid var(--cao-line);border-radius:var(--cao-radius);
+  padding:22px 24px;box-shadow:var(--cao-shadow);position:relative;
+}
+.cao-story::before{
+  content:"";position:absolute;left:0;top:22px;bottom:22px;width:3px;border-radius:3px;
+  background:linear-gradient(var(--cao-leaf),var(--cao-moss));
+}
+.cao-story h3{font-size:16px;color:var(--cao-deep-2);margin-bottom:8px}
+.cao-story p{font-size:13.8px;color:#465247;line-height:1.8}
+.cao-story-meta{font-size:12px;color:#8a948a;margin-top:12px;display:flex;gap:12px;flex-wrap:wrap}
+.cao-rank{
+  background:var(--cao-deep);color:#eaf0da;border-radius:var(--cao-radius);
+  padding:24px 24px 18px;box-shadow:0 30px 60px -40px rgba(22,48,31,.95);
+}
+.cao-rank h3{font-size:15px;letter-spacing:.1em;color:var(--cao-leaf);margin-bottom:6px}
+.cao-rank-sub{font-size:12.5px;color:#b9c9a9;margin-bottom:14px}
+.cao-rank-tabs{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+.cao-rank-tabs button{
+  font-size:12px;padding:4px 12px;border-radius:999px;color:#c6d4b6;
+  border:1px solid rgba(201,226,101,.28);transition:.2s;
+}
+.cao-rank-tabs button.is-on{background:var(--cao-leaf);color:var(--cao-deep-2);border-color:var(--cao-leaf);font-weight:700}
+.cao-rank-list li{
+  display:flex;align-items:center;gap:12px;padding:10px 0;
+  border-bottom:1px dashed rgba(201,226,101,.16);font-size:13.5px;
+}
+.cao-rank-list li:last-child{border-bottom:0}
+.cao-rank-no{
+  width:22px;height:22px;border-radius:7px;flex:none;display:grid;place-items:center;
+  font-size:12px;font-weight:700;background:rgba(201,226,101,.16);color:var(--cao-leaf);
+}
+.cao-rank-no--top{background:var(--cao-amber);color:#3a2703}
+.cao-rank-name{flex:1;color:#e6eed6}
+.cao-rank-heat{font-size:12px;color:#a9bd98}
+
+/* ============ 用户评价 ============ */
+.cao-voices{background:linear-gradient(180deg,#f7f5ee,#f0eee3)}
+.cao-voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cao-voice{
+  background:#fff;border:1px solid var(--cao-line);border-radius:16px;
+  padding:18px 20px;box-shadow:0 14px 32px -26px rgba(22,48,31,.6);
+  display:flex;flex-direction:column;gap:10px;font-size:13.5px;color:#465247;
+}
+.cao-voice-head{display:flex;align-items:center;gap:10px}
+.cao-voice-name{font-size:13.5px;font-weight:700;color:var(--cao-deep-2)}
+.cao-voice-role{font-size:11.5px;color:#8a948a}
+.cao-voice p{line-height:1.75}
+.cao-voice-date{font-size:11.5px;color:#9aa396;margin-top:auto}
+
+/* ============ 企业动态 / 更新日志 ============ */
+.cao-news-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:start}
+.cao-news-list{display:grid;gap:12px}
+.cao-news-item{
+  display:grid;grid-template-columns:78px 1fr;gap:16px;align-items:start;
+  background:#fff;border:1px solid var(--cao-line);border-radius:14px;padding:16px 18px;
+  transition:border-color .2s,transform .2s;
+}
+.cao-news-item:hover{border-color:rgba(79,122,82,.42);transform:translateX(3px)}
+.cao-news-date{
+  font-size:12px;color:var(--cao-deep);background:#eef3df;border-radius:10px;
+  padding:6px 4px;text-align:center;line-height:1.5;font-weight:600;
+}
+.cao-news-date b{display:block;font-size:17px;color:var(--cao-moss)}
+.cao-news-item h3{font-size:14.5px;color:var(--cao-deep-2);margin-bottom:4px}
+.cao-news-item p{font-size:13px;color:var(--cao-muted);line-height:1.7}
+.cao-partners{
+  background:#fff;border:1px solid var(--cao-line);border-radius:var(--cao-radius);
+  padding:22px 24px;box-shadow:var(--cao-shadow);
+}
+.cao-partners h3{font-size:14.5px;color:var(--cao-deep);margin-bottom:14px;letter-spacing:.04em}
+.cao-partner-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.cao-partner{
+  display:flex;align-items:center;gap:9px;font-size:13px;color:#415046;
+  border:1px dashed var(--cao-line);border-radius:11px;padding:9px 12px;
+  transition:.2s;
+}
+.cao-partner:hover{border-color:var(--cao-moss);background:#fafbf3}
+.cao-partner i{
+  width:26px;height:26px;border-radius:8px;flex:none;display:grid;place-items:center;
+  font-size:11px;font-weight:700;color:#fff;font-style:normal;
+}
+.cao-update-log{margin-top:18px;border-top:1px dashed var(--cao-line);padding-top:14px}
+.cao-update-log h4{font-size:13px;color:var(--cao-moss);letter-spacing:.08em;margin-bottom:8px}
+.cao-update-log li{font-size:12.5px;color:#6b7568;padding:5px 0;display:flex;gap:10px}
+.cao-update-log li span{color:var(--cao-amber);font-weight:700;flex:none}
+
+/* ============ FAQ + 联系 ============ */
+.cao-faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.cao-faq details{
+  background:#fff;border:1px solid var(--cao-line);border-radius:13px;
+  padding:0 18px;margin-bottom:10px;transition:border-color .2s;
+}
+.cao-faq details[open]{border-color:rgba(79,122,82,.45);box-shadow:0 14px 30px -26px rgba(22,48,31,.6)}
+.cao-faq summary{
+  list-style:none;cursor:pointer;padding:15px 0;font-size:14.5px;font-weight:600;
+  color:var(--cao-deep-2);display:flex;align-items:center;gap:10px;
+}
+.cao-faq summary::-webkit-details-marker{display:none}
+.cao-faq summary::before{
+  content:"+";width:20px;height:20px;flex:none;border-radius:6px;
+  background:#eef3df;color:var(--cao-deep);display:grid;place-items:center;
+  font-weight:700;font-size:14px;transition:.2s;
+}
+.cao-faq details[open] summary::before{content:"−";background:var(--cao-leaf);color:var(--cao-deep-2)}
+.cao-faq details p{font-size:13.5px;color:#4d594e;line-height:1.8;padding:0 0 16px 30px}
+
+.cao-contact-card{
+  background:linear-gradient(150deg,#1f3d2b,#33573a 70%,#4a7145);
+  color:#eef4db;border-radius:var(--cao-radius);padding:26px 26px 24px;
+  box-shadow:0 32px 62px -40px rgba(22,48,31,.95);
+}
+.cao-contact-card h3{font-size:18px;color:#f4f8e8;margin-bottom:8px}
+.cao-contact-card p{font-size:13.5px;color:#c3d3b2;line-height:1.8;margin-bottom:16px}
+.cao-contact-rows{display:grid;gap:10px;margin-bottom:18px}
+.cao-contact-row{display:flex;gap:10px;font-size:13px;color:#dfe9cf;align-items:center}
+.cao-contact-row b{color:var(--cao-leaf);font-weight:600;flex:none;min-width:64px}
+.cao-contact-actions{display:flex;gap:10px;flex-wrap:wrap}
+.cao-contact-actions .cao-btn--ghost{background:rgba(247,245,238,.1);color:#f1f5e4;border-color:rgba(201,226,101,.4)}
+.cao-contact-actions .cao-btn--ghost:hover{background:rgba(201,226,101,.2)}
+.cao-contact-actions .cao-btn--primary{background:var(--cao-leaf);color:var(--cao-deep-2)}
+
+/* ============ 页脚 ============ */
+.cao-footer{
+  background:linear-gradient(180deg,#16301f,#12271a);color:#b9c9a9;
+  margin-top:20px;padding:52px 0 26px;font-size:13.5px;
+}
+.cao-footer-inner{width:min(1200px,94vw);margin:0 auto}
+.cao-footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;padding-bottom:30px;border-bottom:1px solid rgba(201,226,101,.16)}
+.cao-footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.cao-footer-brand strong{font-size:17px;color:#f0f5e4;letter-spacing:.02em}
+.cao-footer-brand small{display:block;font-size:11px;color:#8fa381;letter-spacing:.14em}
+.cao-footer p{line-height:1.85;color:#98ab89;font-size:13px}
+.cao-footer h4{font-size:13.5px;color:#e2ecce;letter-spacing:.1em;margin-bottom:12px;font-weight:600}
+.cao-footer li{padding:5px 0;font-size:13px;color:#9aae8b}
+.cao-footer li a:hover{color:var(--cao-leaf)}
+.cao-footer-bottom{
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  padding-top:20px;font-size:12.5px;color:#81946f;
+}
+.cao-footer-bottom a{color:#a3b892}
+.cao-footer-bottom a:hover{color:var(--cao-leaf)}
+
+/* ============ 回到顶部 & Toast ============ */
+.cao-top-btn{
+  position:fixed;right:22px;bottom:26px;width:46px;height:46px;border-radius:50%;
+  background:var(--cao-deep);color:var(--cao-leaf);font-size:18px;
+  display:grid;place-items:center;box-shadow:0 16px 32px -12px rgba(22,48,31,.9);
+  opacity:0;visibility:hidden;transform:translateY(10px);transition:.28s;z-index:130;
+}
+.cao-top-btn.is-show{opacity:1;visibility:visible;transform:translateY(0)}
+.cao-top-btn:hover{background:var(--cao-deep-2)}
+
+.cao-toast{
+  position:fixed;left:50%;bottom:38px;transform:translate(-50%,20px);
+  background:rgba(22,48,31,.96);color:#eef4db;font-size:13.5px;
+  padding:10px 22px;border-radius:999px;box-shadow:0 18px 40px -18px rgba(0,0,0,.6);
+  opacity:0;visibility:hidden;transition:.26s;z-index:200;pointer-events:none;
+  border:1px solid rgba(201,226,101,.3);
+}
+.cao-toast.is-show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+
+.cao-modal{
+  position:fixed;inset:0;z-index:210;display:grid;place-items:center;
+  background:rgba(15,32,21,.55);backdrop-filter:blur(4px);
+  opacity:0;visibility:hidden;transition:.22s;padding:20px;
+}
+.cao-modal.is-open{opacity:1;visibility:visible}
+.cao-modal-card{
+  background:#fbfaf4;border-radius:20px;max-width:520px;width:100%;
+  padding:26px 26px 22px;box-shadow:0 40px 80px -30px rgba(0,0,0,.5);
+  transform:translateY(12px);transition:.24s;max-height:86vh;overflow:auto;
+}
+.cao-modal.is-open .cao-modal-card{transform:translateY(0)}
+.cao-modal-card h3{font-size:17px;color:var(--cao-deep-2);margin-bottom:6px}
+.cao-modal-card p{font-size:13.5px;color:var(--cao-muted);line-height:1.8;margin-bottom:14px}
+.cao-modal-field{display:grid;gap:10px;margin-bottom:16px}
+.cao-modal-field label{font-size:12.5px;color:#5d6a5f;font-weight:600;letter-spacing:.04em}
+.cao-modal-field input,.cao-modal-field textarea{
+  width:100%;border:1px solid var(--cao-line);border-radius:11px;padding:10px 13px;
+  font-size:13.5px;font-family:inherit;background:#fff;color:var(--cao-ink);outline:0;
+  transition:border-color .2s,box-shadow .2s;
+}
+.cao-modal-field input:focus,.cao-modal-field textarea:focus{border-color:var(--cao-moss);box-shadow:0 0 0 4px rgba(79,122,82,.13)}
+.cao-modal-field textarea{min-height:96px;resize:vertical}
+.cao-modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:6px}
+.cao-modal-close{
+  position:absolute;right:calc(50% - 260px + 14px);top:14px;display:none;
+}
+
+/* ============ 响应式 ============ */
+@media (max-width:1024px){
+  .cao-nav{display:none}
+  .cao-burger{display:flex}
+  .cao-hero-inner{grid-template-columns:1fr;gap:34px;padding:44px 0 52px}
+  .cao-hero-stats{max-width:none}
+  .cao-about-grid,.cao-feature-grid,.cao-mixed-grid,.cao-news-grid,.cao-faq-grid{grid-template-columns:1fr}
+  .cao-about-side{position:static}
+  .cao-topic-grid,.cao-voice-grid{grid-template-columns:repeat(2,1fr)}
+  .cao-creator-grid{grid-template-columns:repeat(2,1fr)}
+  .cao-footer-top{grid-template-columns:1fr 1fr}
+  .cao-wall-grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:88px}
+  .cao-search input{width:104px}
+}
+@media (max-width:680px){
+  .cao-sec{padding:52px 0}
+  .cao-hero h1{font-size:31px}
+  .cao-hero-lead{font-size:15px}
+  .cao-hero-stats{grid-template-columns:repeat(3,1fr);gap:8px}
+  .cao-hero-stats b{font-size:19px}
+  .cao-hero-chip{left:8px;bottom:12px;font-size:12px;padding:8px 12px}
+  .cao-hero-badge-2{right:8px;top:8px;font-size:11.5px}
+  .cao-feature-sm{grid-template-columns:1fr}
+  .cao-topic-grid,.cao-voice-grid,.cao-creator-grid{grid-template-columns:1fr}
+  .cao-wall-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:104px}
+  .cao-wall-item--w3,.cao-wall-item--w2{grid-column:span 2}
+  .cao-footer-top{grid-template-columns:1fr;gap:24px}
+  .cao-partner-grid{grid-template-columns:1fr}
+  .cao-header{gap:10px}
+  .cao-brand-txt small{display:none}
+  .cao-search{display:none}
+  .cao-anno-inner{font-size:12px}
+  .cao-top-btn{right:14px;bottom:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<a class="cao-skip" href="#cao-main">跳到主要内容</a>
+
+<div class="cao-sticky">
+  <div class="cao-anno" role="region" aria-label="官方公告">
+    <div class="cao-anno-inner">
+      <span class="cao-anno-tag">官方发布</span>
+      <div class="cao-anno-track" id="cao-anno-track">
+        <span><b>11-18</b> 秋日田野影像征集「记录每一种生长」报名开启，共设 12 个入选名额</span>
+        <span><b>11-15</b> 品牌原创专题《土壤与手》第三集已更新，时长 26 分钟</span>
+        <span><b>11-12</b> 创作者扶持计划第五期名单公示，新增 30 位签约创作者</span>
+        <span><b>11-08</b> 企业动态：品牌内容生态年度报告正式对外发布</span>
+        <span><b>11-18</b> 秋日田野影像征集「记录每一种生长」报名开启，共设 12 个入选名额</span>
+        <span><b>11-15</b> 品牌原创专题《土壤与手》第三集已更新，时长 26 分钟</span>
+        <span><b>11-12</b> 创作者扶持计划第五期名单公示，新增 30 位签约创作者</span>
+        <span><b>11-08</b> 企业动态：品牌内容生态年度报告正式对外发布</span>
+      </div>
+      <a class="cao-anno-more" href="#cao-news">全部动态</a>
+    </div>
+  </div>
+
+  <header class="cao-header">
+    <a class="cao-brand" href="#cao-top" aria-label="91cao草网官网首页">
+      <span class="cao-brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none">
+          <path d="M32 54C32 35 45 24 55 21C55 41 46 52 32 54Z" fill="#c9e265"/>
+          <path d="M32 54C32 37 21 27 9 24C9 43 20 52 32 54Z" fill="#e8a33d"/>
+          <path d="M32 54V30" stroke="#eef4db" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="cao-brand-txt">
+        <strong>91cao草网</strong>
+        <small>CAO · OFFICIAL</small>
+      </span>
+    </a>
+
+    <nav class="cao-nav" aria-label="主导航">
+      <a class="is-active" href="#cao-top">首页</a>
+      <a href="#cao-focus">焦点内容</a>
+      <a href="#cao-topics">专题企划</a>
+      <a href="#cao-creators">创作者</a>
+      <a href="#cao-wall">影像墙</a>
+      <a href="#cao-news">企业动态</a>
+      <a href="#cao-faq">帮助</a>
+      <a href="#cao-contact">联系</a>
+    </nav>
+
+    <div class="cao-header-tools">
+      <form class="cao-search" id="cao-search-form" role="search">
+        <label for="cao-search-input" class="cao-skip">站内搜索</label>
+        <input id="cao-search-input" type="search" placeholder="搜索内容 / 创作者" autocomplete="off">
+        <button type="submit">搜索</button>
+      </form>
+      <button class="cao-burger" id="cao-burger" aria-label="展开导航菜单" aria-expanded="false" aria-controls="cao-mobile-nav">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+
+  <nav class="cao-mobile-nav" id="cao-mobile-nav" aria-label="移动端导航">
+    <a href="#cao-top">首页</a>
+    <a href="#cao-focus">焦点内容</a>
+    <a href="#cao-topics">专题企划</a>
+    <a href="#cao-creators">创作者</a>
+    <a href="#cao-wall">影像墙</a>
+    <a href="#cao-news">企业动态</a>
+    <a href="#cao-faq">帮助</a>
+    <a href="#cao-contact">联系</a>
+  </nav>
+</div>
+
+<main class="cao-main" id="cao-main">
+
+  <!-- ============ 首屏 ============ -->
+  <section class="cao-hero" id="cao-top">
+    <div class="cao-hero-inner">
+      <div class="cao-hero-copy">
+        <span class="cao-hero-badge"><span>官方网站</span>品牌影像社区 · 持续运营中</span>
+        <h1>91cao草网<span class="cao-h1-hi">官网</span></h1>
+        <p class="cao-hero-lead">记录每一种生长，让自然与日常被认真看见。</p>
+        <p class="cao-hero-desc">
+          作为深耕自然生活与原创影像领域的品牌内容社区，91cao草网官网以高清原创视频为骨架，以创作者生态为血脉，
+          为品质用户提供值得信赖的官方内容平台。
+        </p>
+        <div class="cao-hero-actions">
+          <a class="cao-btn cao-btn--primary" href="#cao-focus">进入焦点内容</a>
+          <button class="cao-btn cao-btn--ghost" type="button" data-cao-open="submit">投稿与报名</button>
+        </div>
+        <div class="cao-hero-stats">
+          <div><b>3,860<span style="font-size:14px">+</span></b><small>原创视频作品</small></div>
+          <div><b>1,240<span style="font-size:14px">位</span></b><small>合作创作者</small></div>
+          <div><b>98.2<span style="font-size:14px">%</span></b><small>用户口碑好评</small></div>
+        </div>
+      </div>
+
+      <div class="cao-hero-visual">
+        <span class="cao-hero-badge-2">品牌主视觉 · 2026 秋季</span>
+        <div class="cao-hero-frame">
+          <img alt="晨雾中的草坡与远处林带，91cao草网秋季品牌主视觉" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 880 605'%3E%3Cdefs%3E%3ClinearGradient id='sky' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23e9eddb'/%3E%3Cstop offset='.55' stop-color='%23cfdab9'/%3E%3Cstop offset='1' stop-color='%23a9bd8f'/%3E%3C/linearGradient%3E%3ClinearGradient id='hill' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%235d8455'/%3E%3Cstop offset='1' stop-color='%232d5231'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='880' height='605' fill='url(%23sky)'/%3E%3Ccircle cx='690' cy='132' r='58' fill='%23f4c97a' opacity='.85'/%3E%3Cpath d='M0 322c120-46 196-16 286-48s180-70 292-38 214 88 302 70v299H0Z' fill='url(%23hill)'/%3E%3Cpath d='M0 402c142-58 232 6 356-30s206-52 328-6 142 46 196 36v203H0Z' fill='%233f6b45' opacity='.86'/%3E%3Cg stroke='%23c9e265' stroke-width='3' fill='none' opacity='.8'%3E%3Cpath d='M120 560c10-52 6-92-14-132'/%3E%3Cpath d='M120 490c22-10 34-30 36-52'/%3E%3Cpath d='M120 508c-20-8-30-26-32-46'/%3E%3Cpath d='M700 574c8-46 4-84-12-120'/%3E%3Cpath d='M700 512c20-10 30-28 32-46'/%3E%3C/g%3E%3Cg fill='%23f7f5ee' opacity='.75'%3E%3Ccircle cx='176' cy='118' r='5'/%3E%3Ccircle cx='228' cy='86' r='3.4'/%3E%3Ccircle cx='132' cy='64' r='2.8'/%3E%3C/g%3E%3C/svg%3E">
+        </div>
+        <div class="cao-hero-chip"><em>新片</em>《土壤与手》第三集 · 26 分钟长片</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 品牌定位与深度解析 ============ -->
+  <section class="cao-sec cao-sec--tight cao-about" id="cao-about">
+    <div class="cao-sec-head">
+      <div>
+        <span class="cao-kicker">Brand Positioning</span>
+        <h2>关于 91cao草网：一个关于<em>生长</em>的官方品牌</h2>
+      </div>
+      <a class="cao-link-more" href="#cao-topics">查看品牌专题</a>
+    </div>
+
+    <div class="cao-about-grid">
+      <div class="cao-about-body">
+        <p>
+          <strong>91cao草网官网</strong>是一个以自然生活为核心的原创影像品牌与内容社区。我们把「草」理解为一种朴素的生长力：
+          它不喧哗，却在每一次雨、每一场风之后继续向上。品牌自成立起便坚持一个朴素的判断——真实的生活值得被高清地记录下来，
+          而记录本身需要专业、需要匠心，也需要长期的陪伴。
+        </p>
+        <p>
+          作为深耕垂直领域的品牌官网，我们的内容主要围绕四条线索展开：自然的生长、手的技艺、城市的边缘与人的日常。
+          我们希望用原创、正版的影像，让用户在任何一段碎片时间里，都能接触到有质感的内容；也希望让创作者在这里被认真对待——
+          他们的作品会被清晰标注署名，他们的创作幕后会被完整记录，他们的成长会被社区共同见证。
+        </p>
+        <h3>一、品牌缘起：从一株草开始的长期主义</h3>
+        <p>
+          品牌的起点非常具体：一支在荒坡上拍摄的短片。拍摄团队原本只是记录一场雨后草叶的变化，却意外收到了大量用户的留言，
+          有人说看见了家乡，有人说想起了小时候的田埂。这种真实的共鸣让我们确认，视频不只是娱乐产品，它同样可以是一种温和的记录方式。
+          从那时起，91cao草网便把「记录每一种生长」定为品牌长期坚持的方向，并把这份坚持写进了内容评估标准里：
+          一条内容是否值得被推荐，首先要看它是否真实，其次才看它是否精致。
+        </p>
+        <h3>二、内容生态：让专业与日常同处一室</h3>
+        <p>
+          在内容生态的建设上，我们同时保留了两种节奏。一种是「深」的：品牌原创专题、长片纪录、人物访谈，
+          往往需要数月甚至一整年的拍摄周期，团队会跟着一位手艺人、一片林地或一个村落，把故事完整地讲完。
+          另一种是「轻」的：创作者日常记录、实用技巧分享、兴趣同好交流，几分钟即可完成一次表达。
+          我们相信二者并不冲突——专业内容提供品质的基准线，日常内容提供社区的温度，二者共同构成了一个可持续的内容生态。
+        </p>
+        <h3>三、创作者关系：不是流量分发，而是共同成长</h3>
+        <p>
+          91cao草网对创作者的态度是长期主义的。平台不以短期热度作为唯一衡量标准，而是通过创作者扶持计划、
+          选题共创、剪辑工作坊、设备共享等方式，帮助创作者把想拍的东西真正拍出来。截至目前，已有超过 1,240 位创作者与品牌建立合作，
+          其中相当一部分是从社区里的普通记录者成长起来的。我们更愿意把自己看成一片土壤，而不是一个赛道的裁判。
+        </p>
+        <h3>四、品质与口碑：值得信赖来自可验证的细节</h3>
+        <p>
+          作为一个以品质立身的品牌官网，我们在细节上做了很多不显眼但重要的工作：所有品牌原创内容均标注拍摄地与拍摄时间，
+          所有创作者作品均保留完整署名与授权信息，所有引用素材均经过版权复核。我们相信，值得信赖不是一句口号，
+          而是由无数可被检验的细节累积而成的口碑。这也是「正版」「原创」被写进品牌章程的原因。
+        </p>
+        <h3>五、社会责任与未来</h3>
+        <p>
+          在内容之外，品牌持续参与在地文化记录、乡村影像教育、自然保护宣传等公益项目。我们希望通过影像，
+          让更多人看见那些不常被镜头对准的地方与人群。未来，91cao草网将继续以官网为中枢，完善内容生态、创作者服务与企业合作体系，
+          并保持对真实的敬畏、对创新的开放、对用户的尊重。这是一种缓慢但确定的方式，我们愿意一直做下去。
+        </p>
+      </div>
+
+      <aside class="cao-about-side">
+        <div class="cao-quote">
+          <strong>BRAND CREED</strong>
+          我们不追逐每一阵风，<br>
+          只认真记录风经过时，<br>
+          草叶真实的弯曲与回弹。<br>
+          —— 91cao草网 品牌信条
+        </div>
+        <div class="cao-mini-card">
+          <h4>品牌关键词</h4>
+          <ul>
+            <li><b>01</b>原创正版 · 完整署名与授权</li>
+            <li><b>02</b>高清画质 · 统一影像标准</li>
+            <li><b>03</b>长期陪伴 · 创作者成长体系</li>
+            <li><b>04</b>真实温暖 · 不做过度修饰</li>
+            <li><b>05</b>社会责任 · 在地文化记录</li>
+          </ul>
+        </div>
+        <div class="cao-mini-card">
+          <h4>官方数据简报</h4>
+          <ul>
+            <li><b>累计</b>原创视频 3,860+ 条</li>
+            <li><b>累计</b>合作创作者 1,240 位</li>
+            <li><b>累计</b>专题企划 96 期</li>
+            <li><b>累计</b>线下工作坊 42 场</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ 焦点内容 ============ -->
+  <section class="cao-sec cao-focus" id="cao-focus">
+    <div class="cao-sec-head">
+      <div>
+        <span class="cao-kicker">Focus Videos</span>
+        <h2>焦点内容：本期<em>精选原创</em>影像</h2>
+        <p class="cao-sec-desc">由编辑团队与社区共同推荐，涵盖田野记录、手艺访谈与城市边缘观察，全部为高清原创作品。</p>
+      </div>
+      <a class="cao-link-more" href="#cao-topics">浏览全部专题</a>
+    </div>
+
+    <div class="cao-feature-grid">
+      <article class="cao-v-card cao-v-card--lg">
+        <div class="cao-v-thumb">
+          <img alt="《土壤与手》第三集封面：老农在清晨的田间翻土，远处是被雾气笼罩的树林" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='a1' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23c9d9c0'/%3E%3Cstop offset='.6' stop-color='%23849f78'/%3E%3Cstop offset='1' stop-color='%234c5f45'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23a1)'/%3E%3Cg opacity='.45' fill='%233d5b3c'%3E%3Cpath d='M0 300l90-70 70 42 96-74 84 58 88-52 96 70 76-48 100 74v150H0Z'/%3E%3C/g%3E%3Crect y='330' width='800' height='120' fill='%233b4a30'/%3E%3Cg stroke='%23dfe7c9' stroke-width='4' opacity='.8' stroke-linecap='round'%3E%3Cpath d='M300 430v-84'/%3E%3Cpath d='M320 400l-30-26'/%3E%3Cpath d='M320 382l28-22'/%3E%3C/g%3E%3Ccircle cx='640' cy='90' r='38' fill='%23f2d79a' opacity='.9'/%3E%3Crect x='0' y='386' width='800' height='64' fill='%231b2b1b' opacity='.35'/%3E%3C/svg%3E">
+          <div class="cao-v-tags"><span class="cao-tag--amber">品牌原创</span><span>田野记录</span></div>
+          <div class="cao-v-play"><i></i></div>
+          <span class="cao-v-dur">26:14</span>
+        </div>
+        <div class="cao-v-body">
+          <h3>《土壤与手》第三集：一位老农与他的三亩试验田</h3>
+          <p class="cao-v-sum">
+            我们用一整年跟拍这位坚持自然农法的老农，记录他如何在一场倒伏之后重新补种，如何用草木灰与雨水调节土壤。这一集没有旁白，
+            只有田间的风声、锄头声与偶尔的对话。
+          </p>
+          <div class="cao-v-meta">
+            <span class="cao-avatar" style="background:#4f7a52">禾</span>
+            <span class="cao-v-author">禾间工作室</span>
+            <span class="cao-v-views">12.6 万次播放 · 3 天前</span>
+          </div>
+          <div class="cao-v-ops">
+            <button class="cao-op" type="button" data-cao-like data-count="6420">赞 6420</button>
+            <button class="cao-op" type="button" data-cao-save>收藏</button>
+            <button class="cao-op" type="button" data-cao-copy>复制链接</button>
+          </div>
+        </div>
+      </article>
+
+      <div class="cao-feature-sm">
+        <article class="cao-v-card">
+          <div class="cao-v-thumb">
+            <img alt="城市边缘观察短片封面：傍晚天桥下车流与行人剪影" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='a2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23252f3c'/%3E%3Cstop offset='.55' stop-color='%23475b63'/%3E%3Cstop offset='1' stop-color='%23a86a3f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23a2)'/%3E%3Cg fill='%23131a21' opacity='.85'%3E%3Crect x='40' y='120' width='120' height='250'/%3E%3Crect x='180' y='70' width='150' height='300'/%3E%3Crect x='350' y='160' width='110' height='210'/%3E%3Crect x='610' y='100' width='150' height='270'/%3E%3C/g%3E%3Cg fill='%23f4c97a' opacity='.8'%3E%3Crect x='204' y='108' width='16' height='18'/%3E%3Crect x='246' y='108' width='16' height='18'/%3E%3Crect x='372' y='196' width='14' height='16'/%3E%3Crect x='640' y='140' width='16' height='18'/%3E%3C/g%3E%3Crect y='370' width='800' height='80' fill='%23202a33'/%3E%3Cpath d='M0 410h800' stroke='%23e8a33d' stroke-width='3' opacity='.55'/%3E%3C/svg%3E">
+            <div class="cao-v-tags"><span>城市探索</span></div>
+            <div class="cao-v-play"><i></i></div>
+            <span class="cao-v-dur">08:42</span>
+          </div>
+          <div class="cao-v-body">
+            <h3>天桥下的三小时：城市边缘的夜班人</h3>
+            <div class="cao-v-meta">
+              <span class="cao-avatar" style="background:#8c6b4a">陆</span>
+              <span class="cao-v-author">陆行记录</span>
+            </div>
+            <div class="cao-v-ops">
+              <button class="cao-op" type="button" data-cao-like data-count="2180">赞 2180</button>
+              <button class="cao-op" type="button" data-cao-save>收藏</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="cao-v-card">
+          <div class="cao-v-thumb">
+            <img alt="手作器物记录封面：木质工作台上摆放着未上釉的陶碗与刻刀" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23c9a97d'/%3E%3Crect y='0' width='800' height='450' fill='%23b08e62' opacity='.5'/%3E%3Cg fill='%23efe3cd'%3E%3Cellipse cx='300' cy='300' rx='150' ry='42'/%3E%3Cellipse cx='300' cy='268' rx='120' ry='34' opacity='.85'/%3E%3Cellipse cx='300' cy='240' rx='94' ry='27' opacity='.7'/%3E%3C/g%3E%3Cg stroke='%23816b47' stroke-width='6' stroke-linecap='round'%3E%3Cpath d='M560 190l86 40'/%3E%3Cpath d='M600 160l60 96'/%3E%3Cpath d='M520 300h140'/%3E%3C/g%3E%3Ccircle cx='180' cy='140' r='46' fill='%23e8a33d' opacity='.55'/%3E%3C/svg%3E">
+            <div class="cao-v-tags"><span>手作技艺</span></div>
+            <div class="cao-v-play"><i></i></div>
+            <span class="cao-v-dur">15:30</span>
+          </div>
+          <div class="cao-v-body">
+            <h3>从一块泥开始：陶艺师的第十一窑</h3>
+            <div class="cao-v-meta">
+              <span class="cao-avatar" style="background:#b5743c">陶</span>
+              <span class="cao-v-author">陶山手作</span>
+            </div>
+            <div class="cao-v-ops">
+              <button class="cao-op" type="button" data-cao-like data-count="3860">赞 3860</button>
+              <button class="cao-op" type="button" data-cao-save>收藏</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="cao-v-card">
+          <div class="cao-v-thumb">
+            <img alt="清晨菜市场记录封面：摊位上整齐摆放的青菜与竹筐" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23e6ecd8'/%3E%3Crect x='40' y='220' width='720' height='180' rx='14' fill='%23a8865c'/%3E%3Cg fill='%234f7a52'%3E%3Ccircle cx='160' cy='220' r='42'/%3E%3Ccircle cx='230' cy='204' r='36'/%3E%3Ccircle cx='300' cy='224' r='40'/%3E%3Ccircle cx='380' cy='206' r='34'/%3E%3C/g%3E%3Cg fill='%23c9e265' opacity='.9'%3E%3Ccircle cx='170' cy='206' r='16'/%3E%3Ccircle cx='312' cy='210' r='15'/%3E%3C/g%3E%3Cg stroke='%237c6a4c' stroke-width='5'%3E%3Cpath d='M470 250v120'/%3E%3Cpath d='M560 250v120'/%3E%3Cpath d='M650 250v120'/%3E%3C/g%3E%3Ccircle cx='700' cy='90' r='40' fill='%23f4c97a'/%3E%3C/svg%3E">
+            <div class="cao-v-tags"><span>日常记录</span></div>
+            <div class="cao-v-play"><i></i></div>
+            <span class="cao-v-dur">06:18</span>
+          </div>
+          <div class="cao-v-body">
+            <h3>六点的菜场：一天的秩序从这里开始</h3>
+            <div class="cao-v-meta">
+              <span class="cao-avatar" style="background:#5b8a4a">青</span>
+              <span class="cao-v-author">青菜笔记</span>
+            </div>
+            <div class="cao-v-ops">
+              <button class="cao-op" type="button" data-cao-like data-count="1540">赞 1540</button>
+              <button class="cao-op" type="button" data-cao-save>收藏</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="cao-v-card">
+          <div class="cao-v-thumb">
+            <img alt="雨中森林声景封面：湿润的林间小径与滴水的树叶" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%232f4436'/%3E%3Cg stroke='%234c6b4a' stroke-width='10' opacity='.85'%3E%3Cpath d='M120 450V40'/%3E%3Cpath d='M280 450V90'/%3E%3Cpath d='M520 450V60'/%3E%3Cpath d='M680 450V110'/%3E%3C/g%3E%3Cg fill='%236d9160' opacity='.8'%3E%3Ccircle cx='140' cy='100' r='58'/%3E%3Ccircle cx='300' cy='150' r='46'/%3E%3Ccircle cx='540' cy='110' r='62'/%3E%3Ccircle cx='700' cy='160' r='44'/%3E%3C/g%3E%3Cg stroke='%23d9e7c6' stroke-width='2' opacity='.55'%3E%3Cpath d='M100 180l-14 46'/%3E%3Cpath d='M360 210l-12 40'/%3E%3Cpath d='M600 200l-14 44'/%3E%3Cpath d='M740 240l-10 38'/%3E%3C/g%3E%3Crect y='380' width='800' height='70' fill='%231d2c20'/%3E%3C/svg%3E">
+            <div class="cao-v-tags"><span>治愈影像</span></div>
+            <div class="cao-v-play"><i></i></div>
+            <span class="cao-v-dur">32:00</span>
+          </div>
+          <div class="cao-v-body">
+            <h3>雨林声景：三十二分钟不说话的森林</h3>
+            <div class="cao-v-meta">
+              <span class="cao-avatar" style="background:#3f6b45">声</span>
+              <span class="cao-v-author">声景采集组</span>
+            </div>
+            <div class="cao-v-ops">
+              <button class="cao-op" type="button" data-cao-like data-count="5210">赞 5210</button>
+              <button class="cao-op" type="button" data-cao-save>收藏</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 专题企划 ============ -->
+  <section class="cao-sec cao-topics" id="cao-topics">
+    <div class="cao-sec-head">
+      <div>
+        <span class="cao-kicker">Special Projects</span>
+        <h2>专题企划：正在进行的<em>长期内容</em></h2>
+        <p class="cao-sec-desc">每一个专题都由品牌编辑与创作者共同推进，更新状态公开透明，欢迎持续关注或参与投稿。</p>
+      </div>
+      <a class="cao-link-more" href="#cao-contact">合作提案</a>
+    </div>
+
+    <div class="cao-topic-grid">
+      <article class="cao-topic">
+        <img alt="专题《土壤与手》封面：稻田中的手与泥土特写" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%236b5a3c'/%3E%3Cg fill='%238b7248'%3E%3Cpath d='M0 260c120-40 220 10 340-16s250-56 460-10v216H0Z'/%3E%3C/g%3E%3Cg stroke='%23c9e265' stroke-width='5' stroke-linecap='round' opacity='.9'%3E%3Cpath d='M200 430v-96'/%3E%3Cpath d='M200 380l-30-30'/%3E%3Cpath d='M200 360l34-28'/%3E%3Cpath d='M540 430v-110'/%3E%3Cpath d='M540 366l-32-32'/%3E%3Cpath d='M540 348l36-30'/%3E%3C/g%3E%3Ccircle cx='650' cy='90' r='46' fill='%23f2d79a' opacity='.8'/%3E%3C/svg%3E">
+        <div class="cao-topic-body">
+          <span class="cao-topic-state"><i></i>更新中 · 已发布 3 集</span>
+          <h3>《土壤与手》自然农法长片计划</h3>
+          <p>以一年为周期，跟拍三位坚持自然农法的耕作者。记录土地的变化，也记录人的耐心。</p>
+          <div class="cao-topic-foot"><span>更新至 <b>11-15</b></span><span>专题编号 SP-26</span></div>
+        </div>
+      </article>
+
+      <article class="cao-topic">
+        <img alt="专题《城市边缘》封面：夜色中的天桥与远处灯光" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23223033'/%3E%3Cg fill='%233b4c4f'%3E%3Crect x='60' y='170' width='120' height='230'/%3E%3Crect x='210' y='110' width='130' height='290'/%3E%3Crect x='370' y='190' width='110' height='210'/%3E%3Crect x='620' y='140' width='140' height='260'/%3E%3C/g%3E%3Cg fill='%23e8a33d' opacity='.85'%3E%3Crect x='230' y='150' width='14' height='16'/%3E%3Crect x='270' y='150' width='14' height='16'/%3E%3Crect x='640' y='180' width='14' height='16'/%3E%3Crect x='90' y='210' width='12' height='14'/%3E%3C/g%3E%3Cpath d='M0 350h800' stroke='%23c9e265' stroke-width='3' opacity='.5'/%3E%3C/svg%3E">
+        <div class="cao-topic-body">
+          <span class="cao-topic-state cao-topic-state--hot"><i></i>热门 · 已发布 5 集</span>
+          <h3>《城市边缘》夜班人观察计划</h3>
+          <p>把镜头对准城市里最安静的时刻，记录那些在别人入睡后仍在工作的人。</p>
+          <div class="cao-topic-foot"><span>更新至 <b>11-10</b></span><span>专题编号 SP-19</span></div>
+        </div>
+      </article>
+
+      <article class="cao-topic">
+        <img alt="专题《手上三月》封面：工作台上的刻刀与木屑" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23b08e62'/%3E%3Crect x='0' y='250' width='800' height='200' fill='%238a6c46'/%3E%3Cg stroke='%23e8dcc4' stroke-width='14' stroke-linecap='round'%3E%3Cpath d='M180 320l200-90'/%3E%3Cpath d='M420 340l220-70'/%3E%3C/g%3E%3Cg fill='%23efe3cd'%3E%3Ccircle cx='600' cy='150' r='40'/%3E%3Ccircle cx='680' cy='210' r='18'/%3E%3Ccircle cx='130' cy='120' r='14'/%3E%3C/g%3E%3Crect y='250' width='800' height='10' fill='%23e8a33d' opacity='.6'/%3E%3C/svg%3E">
+        <div class="cao-topic-body">
+          <span class="cao-topic-state"><i></i>更新中 · 已发布 4 集</span>
+          <h3>《手上三月》手作技艺访谈录</h3>
+          <p>每期拜访一位手艺人，从材料、工具到学徒往事，完整记录一门手艺的当下状态。</p>
+          <div class="cao-topic-foot"><span>更新至 <b>11-06</b></span><span>专题编号 SP-31</span></div>
+        </div>
+      </article>
+
+      <article class="cao-topic">
+        <img alt="专题《草叶笔记》封面：晨露附着在草叶上的特写" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23dbe6c8'/%3E%3Cg stroke='%234f7a52' stroke-width='9' stroke-linecap='round' fill='none'%3E%3Cpath d='M400 450C400 320 340 240 260 200'/%3E%3Cpath d='M400 450C400 300 470 240 560 210'/%3E%3Cpath d='M400 450C400 340 400 280 400 220'/%3E%3C/g%3E%3Cg fill='%23eaf5d8' opacity='.9'%3E%3Ccircle cx='300' cy='248' r='16'/%3E%3Ccircle cx='520' cy='262' r='13'/%3E%3Ccircle cx='412' cy='236' r='11'/%3E%3C/g%3E%3Ccircle cx='660' cy='110' r='48' fill='%23f4c97a'/%3E%3Crect y='400' width='800' height='50' fill='%23a9bd8f' opacity='.7'/%3E%3C/svg%3E">
+        <div class="cao-topic-body">
+          <span class="cao-topic-state"><i></i>征集中 · 已有 68 份投稿</span>
+          <h3>《草叶笔记》一分钟自然记录征集</h3>
+          <p>用一分钟记录你身边的一株草、一片叶或一场雨。入选作品将获得官方推荐与署名展示。</p>
+          <div class="cao-topic-foot"><span>截止 <b>12-20</b></span><span>专题编号 SP-35</span></div>
+        </div>
+      </article>
+
+      <article class="cao-topic">
+        <img alt="专题《小院四季》封面：小院中的木桌与绿植" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23e9eddb'/%3E%3Crect x='0' y='300' width='800' height='150' fill='%23a8865c'/%3E%3Cg fill='%234f7a52'%3E%3Ccircle cx='160' cy='230' r='54'/%3E%3Ccircle cx='640' cy='250' r='62'/%3E%3C/g%3E%3Cg fill='%23c9e265'%3E%3Ccircle cx='182' cy='212' r='20'/%3E%3Ccircle cx='664' cy='228' r='22'/%3E%3C/g%3E%3Crect x='300' y='280' width='200' height='24' rx='8' fill='%238a6c46'/%3E%3Cg stroke='%238a6c46' stroke-width='8'%3E%3Cpath d='M330 304v66'/%3E%3Cpath d='M470 304v66'/%3E%3C/g%3E%3C/svg%3E">
+        <div class="cao-topic-body">
+          <span class="cao-topic-state"><i></i>更新中 · 已发布 6 集</span>
+          <h3>《小院四季》生活方式影像计划</h3>
+          <p>跟随六户人家，记录一年四季里小院里的种植、烹饪与相处，呈现安静的日常质感。</p>
+          <div class="cao-topic-foot"><span>更新至 <b>10-28</b></span><span>专题编号 SP-12</span></div>
+        </div>
+      </article>
+
+      <article class="cao-topic">
+        <img alt="专题《声景地图》封面：山谷中的溪流与雾" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23b7c9c0'/%3E%3Cpath d='M0 260c140-70 240-20 360-60s220-60 440-10v260H0Z' fill='%23708c72'/%3E%3Cpath d='M0 330c160-60 260 10 400-30s220-40 400 10v140H0Z' fill='%233f6b45'/%3E%3Cg stroke='%23e6efdb' stroke-width='3' opacity='.7' fill='none'%3E%3Cpath d='M120 280c60 20 100 12 150-16'/%3E%3Cpath d='M420 300c60 16 100 8 140-14'/%3E%3C/g%3E%3Crect y='420' width='800' height='30' fill='%232d5231'/%3E%3C/svg%3E">
+        <div class="cao-topic-body">
+          <span class="cao-topic-state cao-topic-state--hot"><i></i>已完结 · 共 8 集</span>
+          <h3>《声景地图》自然声音采集档案</h3>
+          <p>八集声音记录，覆盖山谷、溪流、湿地与海边，每集附采集坐标与设备说明。</p>
+          <div class="cao-topic-foot"><span>完结于 <b>09-30</b></span><span>专题编号 SP-08</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 创作者矩阵 ============ -->
+  <section class="cao-sec cao-creators" id="cao-creators">
+    <div class="cao-sec-head">
+      <div>
+        <span class="cao-kicker">Creators</span>
+        <h2>创作者矩阵：让<em>专业的人</em>被看见</h2>
+        <p class="cao-sec-desc">以下为品牌签约与长期合作创作者，作品均经授权发布，可通过创作者主页查看完整作品集。</p>
+      </div>
+      <a class="cao-link-more" href="#cao-contact">申请入驻</a>
+    </div>
+
+    <div class="cao-creator-grid">
+      <article class="cao-creator">
+        <div class="cao-creator-top">
+          <span class="cao-avatar cao-avatar--lg" style="background:#4f7a52">禾</span>
+          <div>
+            <div class="cao-creator-name">禾间工作室</div>
+            <div class="cao-creator-field">田野记录 · 长片纪录</div>
+          </div>
+        </div>
+        <p>专注自然农法与乡村题材，擅长以长周期跟拍呈现真实变化。团队三人，常驻南方丘陵地区。</p>
+        <div class="cao-creator-stats"><span>作品 <b>86</b></span><span>关注 <b>4.2 万</b></span></div>
+        <a class="cao-creator-more" href="#cao-focus" data-cao-author="禾间工作室">查看主页 →</a>
+      </article>
+
+      <article class="cao-creator">
+        <div class="cao-creator-top">
+          <span class="cao-avatar cao-avatar--lg" style="background:#8c6b4a">陆</span>
+          <div>
+            <div class="cao-creator-name">陆行记录</div>
+            <div class="cao-creator-field">城市探索 · 人物访谈</div>
+          </div>
+        </div>
+        <p>关注城市边缘与夜班人群，作品节奏克制，善于用环境音替代解说词。</p>
+        <div class="cao-creator-stats"><span>作品 <b>62</b></span><span>关注 <b>3.1 万</b></span></div>
+        <a class="cao-creator-more" href="#cao-focus" data-cao-author="陆行记录">查看主页 →</a>
+      </article>
+
+      <article class="cao-creator">
+        <div class="cao-creator-top">
+          <span class="cao-avatar cao-avatar--lg" style="background:#b5743c">陶</span>
+          <div>
+            <div class="cao-creator-name">陶山手作</div>
+            <div class="cao-creator-field">手作技艺 · 器物记录</div>
+          </div>
+        </div>
+        <p>陶艺师出身的创作者，镜头永远对准工作台。近期连载《第十一窑》系列教程与幕后。</p>
+        <div class="cao-creator-stats"><span>作品 <b>41</b></span><span>关注 <b>2.6 万</b></span></div>
+        <a class="cao-creator-more" href="#cao-focus" data-cao-author="陶山手作">查看主页 →</a>
+      </article>
+
+      <article class="cao-creator">
+        <div class="cao-creator-top">
+          <span class="cao-avatar cao-avatar--lg" style="background:#3f6b45">声</span>
+          <div>
+            <div class="cao-creator-name">声景采集组</div>
+            <div class="cao-creator-field">自然声音 · 治愈影像</div>
+          </div>
+        </div>
+        <p>由两位录音师组成的双人组，长期在湿地与森林中采集声音，坚持无旁白、无配乐的呈现方式。</p>
+        <div class="cao-creator-stats"><span>作品 <b>58</b></span><span>关注 <b>5.7 万</b></span></div>
+        <a class="cao-creator-more" href="#cao-focus" data-cao-author="声景采集组">查看主页 →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 影像墙 ============ -->
+  <section class="cao-sec cao-wall" id="cao-wall">
+    <div class="cao-sec-head">
+      <div>
+        <span class="cao-kicker">Community Wall</span>
+        <h2>社区影像墙：来自<em>用户的作品</em></h2>
+        <p class="cao-sec-desc">所有封面均由社区用户投稿，经授权后在官网展示。点击卡片可复制分享链接。</p>
+      </div>
+    </div>
+
+    <div class="cao-wall-grid">
+      <figure class="cao-wall-item cao-wall-item--w2 cao-wall-item--h2" data-cao-copy>
+        <img alt="影像墙作品：晨光穿过林间薄雾，一条小径伸向远处" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23dfe7cd'/%3E%3Cg stroke='%23587d55' stroke-width='12' opacity='.8'%3E%3Cpath d='M120 450V60'/%3E%3Cpath d='M300 450V120'/%3E%3Cpath d='M560 450V80'/%3E%3Cpath d='M700 450V140'/%3E%3C/g%3E%3Cg fill='%2379a06c' opacity='.75'%3E%3Ccircle cx='140' cy='120' r='66'/%3E%3Ccircle cx='320' cy='170' r='52'/%3E%3Ccircle cx='580' cy='130' r='70'/%3E%3Ccircle cx='716' cy='190' r='50'/%3E%3C/g%3E%3Cg stroke='%23f4f8e8' stroke-width='4' opacity='.6'%3E%3Cpath d='M400 450l-60-300'/%3E%3Cpath d='M400 450l60-300'/%3E%3C/g%3E%3C/svg%3E">
+        <figcaption>林间小径 · by 早行客</figcaption>
+      </figure>
+
+      <figure class="cao-wall-item cao-wall-item--w2" data-cao-copy>
+        <img alt="影像墙作品：午后窗台上的玻璃瓶与光影" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23f0e6d2'/%3E%3Crect x='120' y='120' width='240' height='260' fill='%23cfe0d8' opacity='.7'/%3E%3Crect x='300' y='210' width='90' height='170' rx='16' fill='%23a9c7bb' opacity='.85'/%3E%3Crect x='440' y='250' width='64' height='130' rx='14' fill='%23e8a33d' opacity='.55'/%3E%3Cpath d='M120 380h560' stroke='%238a6c46' stroke-width='10'/%3E%3Ccircle cx='620' cy='130' r='42' fill='%23f4c97a'/%3E%3C/svg%3E">
+        <figcaption>窗台静物 · by 慢日光</figcaption>
+      </figure>
+
+      <figure class="cao-wall-item" data-cao-copy>
+        <img alt="影像墙作品：雨后草叶上的水珠特写" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23cfe0bc'/%3E%3Cpath d='M200 300C200 190 140 130 70 110' stroke='%234f7a52' stroke-width='10' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='140' cy='160' r='18' fill='%23f6fbe9' opacity='.9'/%3E%3Ccircle cx='210' cy='210' r='12' fill='%23f6fbe9' opacity='.8'/%3E%3C/svg%3E">
+        <figcaption>露水 · by 叶下</figcaption>
+      </figure>
+
+      <figure class="cao-wall-item" data-cao-copy>
+        <img alt="影像墙作品：老屋木门上的铁环与斑驳漆面" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23795a3c'/%3E%3Crect x='40' y='30' width='320' height='240' fill='%239a7952'/%3E%3Ccircle cx='200' cy='150' r='34' fill='none' stroke='%233a2b1c' stroke-width='12'/%3E%3Ccircle cx='200' cy='108' r='14' fill='%233a2b1c'/%3E%3Cg stroke='%235f4529' stroke-width='3' opacity='.7'%3E%3Cpath d='M60 60h280'/%3E%3Cpath d='M60 240h280'/%3E%3C/g%3E%3C/svg%3E">
+        <figcaption>门环 · by 旧物志</figcaption>
+      </figure>
+
+      <figure class="cao-wall-item cao-wall-item--w2" data-cao-copy>
+        <img alt="影像墙作品：黄昏时分的稻田与远处村庄炊烟" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23f3d9a6'/%3E%3Ccircle cx='620' cy='120' r='54' fill='%23e8a33d' opacity='.8'/%3E%3Cpath d='M0 300c140-40 240 10 380-16s240-34 420 6v160H0Z' fill='%23c9b46a'/%3E%3Cpath d='M0 360c160-30 260 16 400-6s240-20 400 10v86H0Z' fill='%238a7a3c'/%3E%3Cg fill='%23645a2c'%3E%3Crect x='120' y='250' width='70' height='50'/%3E%3Crect x='210' y='266' width='52' height='34'/%3E%3C/g%3E%3C/svg%3E">
+        <figcaption>稻田黄昏 · by 晚归人</figcaption>
+      </figure>
+
+      <figure class="cao-wall-item" data-cao-copy>
+        <img alt="影像墙作品：竹编篮子里的新鲜蔬菜" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23e9e2cf'/%3E%3Cel%3E%3C/el%3E%3Cellipse cx='200' cy='230' rx='130' ry='52' fill='%23a8865c'/%3E%3Cellipse cx='200' cy='210' rx='112' ry='40' fill='%23c0a173'/%3E%3Cg fill='%234f7a52'%3E%3Ccircle cx='160' cy='190' r='30'/%3E%3Ccircle cx='220' cy='180' r='34'/%3E%3Ccircle cx='262' cy='200' r='24'/%3E%3C/g%3E%3Cg fill='%23e8a33d'%3E%3Ccircle cx='190' cy='206' r='14'/%3E%3C/g%3E%3C/svg%3E">
+        <figcaption>菜篮 · by 早市</figcaption>
+      </figure>
+
+      <figure class="cao-wall-item" data-cao-copy>
+        <img alt="影像墙作品：泥地上的脚印与散落的枯叶" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%238b7a5f'/%3E%3Cg fill='%236e5f47'%3E%3Cellipse cx='120' cy='120' rx='26' ry='40' transform='rotate(-18 120 120)'/%3E%3Cellipse cx='190' cy='190' rx='26' ry='40' transform='rotate(-10 190 190)'/%3E%3Cellipse cx='280' cy='150' rx='24' ry='36' transform='rotate(-22 280 150)'/%3E%3C/g%3E%3Cg fill='%23c9a45c' opacity='.85'%3E%3Cellipse cx='320' cy='240' rx='30' ry='14'/%3E%3Cellipse cx='90' cy='250' rx='24' ry='10'/%3E%3C/g%3E%3C/svg%3E">
+        <figcaption>脚印 · by 土路</figcaption>
+      </figure>
+
+      <figure class="cao-wall-item cao-wall-item--w2" data-cao-copy>
+        <img alt="影像墙作品：夜晚篝火旁的吉他与人影" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%231f2b26'/%3E%3Ccircle cx='400' cy='330' r='120' fill='%23e8a33d' opacity='.28'/%3E%3Cg fill='%23e8a33d'%3E%3Cpath d='M400 380c-30-30-14-70 0-90 14 20 30 60 0 90Z'/%3E%3Cpath d='M370 384c-40-14-42-58-32-80 16 12 46 42 32 80Z'/%3E%3Cpath d='M430 384c40-14 42-58 32-80-16 12-46 42-32 80Z'/%3E%3C/g%3E%3Cg fill='%23111d18'%3E%3Ccircle cx='250' cy='300' r='34'/%3E%3Crect x='216' y='330' width='68' height='100' rx='26'/%3E%3Ccircle cx='560' cy='292' r='32'/%3E%3Crect x='528' y='320' width='64' height='110' rx='24'/%3E%3C/g%3E%3Crect x='600' y='220' width='16' height='160' rx='6' fill='%23c9a05a' opacity='.8'/%3E%3C/svg%3E">
+        <figcaption>篝火与歌 · by 夜行乐队</figcaption>
+      </figure>
+    </div>
+
+    <div class="cao-wall-actions">
+      <button class="cao-btn cao-btn--primary" type="button" data-cao-open="submit">上传我的作品</button>
+    </div>
+  </section>
+
+  <!-- ============ 故事随笔 + 数据榜单 ============ -->
+  <section class="cao-sec cao-stories" id="cao-stories">
+    <div class="cao-sec-head">
+      <div>
+        <span class="cao-kicker">Notes & Ranking</span>
+        <h2>创作者手记与<em>社区榜单</em></h2>
+      </div>
+    </div>
+
+    <div class="cao-mixed-grid">
+      <div class="cao-story-list">
+        <article class="cao-story">
+          <h3>为什么我决定用一年只拍一块田</h3>
+          <p>
+            起初我以为，记录土地是一件很简单的事：架好机器，等风来。真正开始之后才发现，最难的是等待。
+            播种后的二十天里，田里几乎没有变化，我每天清晨去同一位置按下快门，回看素材时甚至怀疑自己在浪费时间。
+            但第四十一天，第一片真叶冒出来，那一刻我才理解「生长」这两个字有多慢。这也是我们愿意把它做成一年周期的原因。
+          </p>
+          <div class="cao-story-meta"><span>禾间工作室</span><span>创作幕后</span><span>11-16</span></div>
+        </article>
+
+        <article class="cao-story">
+          <h3>在城市里拍夜班人，我学会了安静</h3>
+          <p>
+            拍摄夜班题材，最大的挑战不是光线，而是如何不打扰。我很少提问，更多时候只是站在不远处，让机器安静地记录。
+            有一次凌晨两点，一位环卫工人在路边吃面，我拍了八分钟，他最后回头说了一句「拍好了吗」，我点头，他说「那你早点回去」。
+            这一幕没有剪进正片，但一直留在我自己的硬盘里。
+          </p>
+          <div class="cao-story-meta"><span>陆行记录</span><span>日常记录</span><span>11-11</span></div>
+        </article>
+
+        <article class="cao-story">
+          <h3>陶艺教程怎么拍才不无聊：我的三条笨办法</h3>
+          <p>
+            第一，把镜头压低，让观众看见手与泥的接触面；第二，保留失败的过程，一次塌坯比十次成功更能说明问题；
+            第三，不要配乐，让拉坯机的声音自己说话。这三条办法听起来都很笨，但它们让我的教程完播率高了不少，
+            也收到了很多同好认真的提问。
+          </p>
+          <div class="cao-story-meta"><span>陶山手作</span><span>经验分享</span><span>11-05</span></div>
+        </article>
+      </div>
+
+      <aside class="cao-rank" aria-label="社区榜单">
+        <h3>本周社区榜单</h3>
+        <p class="cao-rank-sub">依据播放、收藏与口碑综合计算，每周一更新</p>
+        <div class="cao-rank-tabs" role="tablist" aria-label="榜单类型">
+          <button type="button" class="is-on" data-cao-rank="hot">热度榜</button>
+          <button type="button" data-cao-rank="new">新人榜</button>
+          <button type="button" data-cao-rank="praise">口碑榜</button>
+        </div>
+        <ul class="cao-rank-list" id="cao-rank-list">
+          <li><span class="cao-rank-no cao-rank-no--top">1</span><span class="cao-rank-name">《土壤与手》第三集</span><span class="cao-rank-heat">12.6 万</span></li>
+          <li><span class="cao-rank-no cao-rank-no--top">2</span><span class="cao-rank-name">雨林声景：三十二分钟</span><span class="cao-rank-heat">9.8 万</span></li>
+          <li><span class="cao-rank-no cao-rank-no--top">3</span><span class="cao-rank-name">天桥下的三小时</span><span class="cao-rank-heat">8.2 万</span></li>
+          <li><span class="cao-rank-no">4</span><span class="cao-rank-name">从一块泥开始：第十一窑</span><span class="cao-rank-heat">7.1 万</span></li>
+          <li><span class="cao-rank-no">5</span><span class="cao-rank-name">六点的菜场</span><span class="cao-rank-heat">5.6 万</span></li>
+          <li><span class="cao-rank-no">6</span><span class="cao-rank-name">小院四季 · 秋分</span><span class="cao-rank-heat">4.9 万</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ 用户评价 ============ -->
+  <section class="cao-sec cao-voices" id="cao-voices">
+    <div class="cao-sec-head">
+      <div>
+        <span class="cao-kicker">Community Voices</span>
+        <h2>来自用户的<em>真实反馈</em></h2>
+        <p class="cao-sec-desc">评价来自社区用户、合作创作者与企业伙伴，未经修饰，保留原貌。</p>
+      </div>
+    </div>
+
+    <div class="cao-voice-grid">
+      <article class="cao-voice">
+        <div class="cao-voice-head">
+          <span class="cao-avatar" style="background:#4f7a52">林</span>
+          <div><div class="cao-voice-name">林间散步的人</div><div class="cao-voice-role">社区用户 · 加入 2 年</div></div>
+        </div>
+        <p>很少见到这么"不着急"的视频站。长片能完整看完，短片也不会被剪得七零八落，看到片尾署名的时候会觉得被认真对待了。</p>
+        <span class="cao-voice-date">11-17</span>
+      </article>
+
+      <article class="cao-voice">
+        <div class="cao-voice-head">
+          <span class="cao-avatar" style="background:#b5743c">陈</span>
+          <div><div class="cao-voice-name">陈师傅的学徒</div><div class="cao-voice-role">创作者 · 手作领域</div></div>
+        </div>
+        <p>投稿流程比想象中简单，收到修改意见也很具体，不是一句"再打磨一下"就结束。作为手艺类创作者，这种反馈很有价值。</p>
+        <span class="cao-voice-date">11-14</span>
+      </article>
+
+      <article class="cao-voice">
+        <div class="cao-voice-head">
+          <span class="cao-avatar" style="background:#3f6b45">周</span>
+          <div><div class="cao-voice-name">周老师</div><div class="cao-voice-role">高校教师 · 影像课程</div></div>
+        </div>
+        <p>我把《声景地图》作为课上案例给学生看，声音采集的坐标和设备说明写得很扎实，这种专业度在同类型平台里不多见。</p>
+        <span class="cao-voice-date">11-10</span>
+      </article>
+
+      <article class="cao-voice">
+        <div class="cao-voice-head">
+          <span class="cao-avatar" style="background:#8c6b4a">吴</span>
+          <div><div class="cao-voice-name">吴小满</div><div class="cao-voice-role">社区用户 · 投稿 12 次</div></div>
+        </div>
+        <p>投稿被选中过一次，收到通知的时候特别开心。虽然只是社区影像墙的一个小位置，但附了完整的署名和作品说明，很有仪式感。</p>
+        <span class="cao-voice-date">11-08</span>
+      </article>
+
+      <article class="cao-voice">
+        <div class="cao-voice-head">
+          <span class="cao-avatar" style="background:#5b8a4a">何</span>
+          <div><div class="cao-voice-name">何小姐</div><div class="cao-voice-role">企业合作伙伴</div></div>
+        </div>
+        <p>我们和平台合作过一次在地文化记录项目，从选题到交付沟通都很顺畅，成片的品质超出预期，后续还会继续合作。</p>
+        <span class="cao-voice-date">11-03</span>
+      </article>
+
+      <article class="cao-voice">
+        <div class="cao-voice-head">
+          <span class="cao-avatar" style="background:#c9a05a">阿</span>
+          <div><div class="cao-voice-name">阿柚</div><div class="cao-voice-role">社区用户 · 加入 6 个月</div></div>
+        </div>
+        <p>喜欢这里的原因是评论区比较安静，大家讨论内容本身，不太吵架。晚上看一集小院四季，是很解压的事情。</p>
+        <span class="cao-voice-date">10-29</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 企业动态 + 合作 ============ -->
+  <section class="cao-sec cao-news" id="cao-news">
+    <div class="cao-sec-head">
+      <div>
+        <span class="cao-kicker">Brand News</span>
+        <h2>企业动态与<em>官方发布</em></h2>
+      </div>
+      <a class="cao-link-more" href="#cao-contact">媒体联络</a>
+    </div>
+
+    <div class="cao-news-grid">
+      <div class="cao-news-list">
+        <article class="cao-news-item">
+          <div class="cao-news-date"><b>18</b>11月</div>
+          <div>
+            <h3>「记录每一种生长」田野影像征集正式开启</h3>
+            <p>面向所有创作者征集一分钟自然记录作品，共设 12 个入选名额，入选作品将获得品牌官网推荐与创作者扶持基金。</p>
+          </div>
+        </article>
+        <article class="cao-news-item">
+          <div class="cao-news-date"><b>15</b>11月</div>
+          <div>
+            <h3>品牌原创专题《土壤与手》第三集上线</h3>
+            <p>本集时长 26 分钟，完整记录一位老农的补种过程，同步开放创作手记与拍摄器材清单。</p>
+          </div>
+        </article>
+        <article class="cao-news-item">
+          <div class="cao-news-date"><b>12</b>11月</div>
+          <div>
+            <h3>创作者扶持计划第五期名单公示</h3>
+            <p>本期新增 30 位签约创作者，覆盖田野记录、手作技艺、自然声音等多个垂直领域。</p>
+          </div>
+        </article>
+        <article class="cao-news-item">
+          <div class="cao-news-date"><b>08</b>11月</div>
+          <div>
+            <h3>品牌内容生态年度报告对外发布</h3>
+            <p>报告梳理了过去一年平台的内容结构、创作者成长数据与社区口碑情况，可通过联系邮箱申请完整版。</p>
+          </div>
+        </article>
+      </div>
+
+      <aside>
+        <div class="cao-partners">
+          <h3>合作品牌与伙伴</h3>
+          <div class="cao-partner-grid">
+            <span class="cao-partner"><i style="background:#4f7a52">青</i>青野农业合作社</span>
+            <span class="cao-partner"><i style="background:#b5743c">陶</i>陶山手作工坊</span>
+            <span class="cao-partner"><i style="background:#3f6b45">声</i>声景研究院</span>
+            <span class="cao-partner"><i style="background:#8c6b4a">地</i>在地文化档案馆</span>
+            <span class="cao-partner"><i style="background:#5b8a4a">林</i>林间自然教育</span>
+            <span class="cao-partner"><i style="background:#c9a05a">光</i>光年影像设备</span>
+          </div>
+          <div class="cao-update-log">
+            <h4>近期更新日志</h4>
+            <ul>
+              <li><span>11-18</span>新增「创作者主页」署名信息展示</li>
+              <li><span>11-16</span>优化专题页更新状态标识</li>
+              <li><span>11-12</span>影像墙支持复制分享链接</li>
+              <li><span>11-09</span>移动端导航体验优化</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ FAQ + 联系 ============ -->
+  <section class="cao-sec cao-faq" id="cao-faq">
+    <div class="cao-sec-head">
+      <div>
+        <span class="cao-kicker">Help & Contact</span>
+        <h2>常见问题与<em>联系方式</em></h2>
+      </div>
+    </div>
+
+    <div class="cao-faq-grid">
+      <div>
+        <details open>
+          <summary>如何向 91cao草网官网投稿？</summary>
+          <p>点击页面任意「投稿与报名」按钮即可填写表单，需提供作品标题、简介、封面与视频链接。编辑团队通常在 5 个工作日内回复，节假日顺延。</p>
+        </details>
+        <details>
+          <summary>作品需要满足哪些基本要求？</summary>
+          <p>作品需为原创或已获得完整授权，画面清晰、声音可辨，时长建议在 1 至 30 分钟之间。涉及第三方素材请注明来源，平台会进行版权复核。</p>
+        </details>
+        <details>
+          <summary>平台是否收取费用或分成？</summary>
+          <p>常规投稿与展示不收取任何费用。品牌合作项目、专题共创等会有单独的合作协议，具体条款在项目沟通阶段公开说明。</p>
+        </details>
+        <details>
+          <summary>入选后我的作品会被如何使用？</summary>
+          <p>作品仅用于品牌官网及官方账号的推荐展示，会完整保留创作者署名。如需用于其他场景，平台会另行取得书面授权。</p>
+        </details>
+        <details>
+          <summary>企业可以合作定制内容吗？</summary>
+          <p>可以。品牌提供在地文化记录、人物访谈、产品影像等多种合作形式，可通过下方联系方式说明需求与预算范围，团队会在 3 个工作日内联系。</p>
+        </details>
+        <details>
+          <summary>如何加入创作者扶持计划？</summary>
+          <p>扶持计划每季度开放一次申请，需要提交近半年内的代表作品与创作方向说明。第五期已公示，第六期预计在次年一季度开放。</p>
+        </details>
+      </div>
+
+      <aside class="cao-contact-card" id="cao-contact">
+        <h3>与品牌建立联系</h3>
+        <p>无论是内容合作、创作者入驻，还是媒体报道与品牌联动，欢迎通过以下方式与 91cao草网官网团队取得联系。</p>
+        <div class="cao-contact-rows">
+          <div class="cao-contact-row"><b>合作邮箱</b>brand@91cao-official.example</div>
+          <div class="cao-contact-row"><b>投稿邮箱</b>create@91cao-official.example</div>
+          <div class="cao-contact-row"><b>媒体联络</b>press@91cao-official.example</div>
+          <div class="cao-contact-row"><b>办公时间</b>周一至周五 09:30 – 18:30</div>
+        </div>
+        <div class="cao-contact-actions">
+          <button class="cao-btn cao-btn--primary" type="button" data-cao-open="submit">提交投稿</button>
+          <button class="cao-btn cao-btn--ghost" type="button" data-cao-open="share">分享官网</button>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer class="cao-footer">
+  <div class="cao-footer-inner">
+    <div class="cao-footer-top">
+      <div>
+        <div class="cao-footer-brand">
+          <span class="cao-brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none">
+              <path d="M32 54C32 35 45 24 55 21C55 41 46 52 32 54Z" fill="#c9e265"/>
+              <path d="M32 54C32 37 21 27 9 24C9 43 20 52 32 54Z" fill="#e8a33d"/>
+              <path d="M32 54V30" stroke="#eef4db" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <div>
+            <strong>91cao草网</strong>
+            <small>CAO · OFFICIAL SITE</small>
+          </div>
+        </div>
+        <p>
+          91cao草网官方网站，是一个以自然生活为核心的原创影像品牌与内容社区。我们坚持原创、正版与高清标准，
+          持续为创作者与企业搭建值得信赖的内容生态。
+        </p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#cao-focus">焦点内容</a></li>
+          <li><a href="#cao-topics">专题企划</a></li>
+          <li><a href="#cao-creators">创作者矩阵</a></li>
+          <li><a href="#cao-wall">社区影像墙</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>品牌信息</h4>
+        <ul>
+          <li><a href="#cao-about">品牌故事</a></li>
+          <li><a href="#cao-news">企业动态</a></li>
+          <li><a href="#cao-stories">创作者手记</a></li>
+          <li><a href="#cao-voices">用户口碑</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>帮助与支持</h4>
+        <ul>
+          <li><a href="#cao-faq">常见问题</a></li>
+          <li><a href="#cao-contact">合作联系</a></li>
+          <li><a href="#cao-contact">投稿指南</a></li>
+          <li><a href="#cao-topics">征集报名</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="cao-footer-bottom">
+      <span>© 2026 91cao草网官方网站 · 版权所有 · 持续运营中</span>
+      <span>品牌内容生态 · 原创正版 · 用户至上</span>
+    </div>
+  </div>
+</footer>
+
+<button class="cao-top-btn" id="cao-top-btn" type="button" aria-label="回到顶部">↑</button>
+<div class="cao-toast" id="cao-toast" role="status" aria-live="polite"></div>
+
+<div class="cao-modal" id="cao-modal" role="dialog" aria-modal="true" aria-labelledby="cao-modal-title">
+  <div class="cao-modal-card" id="cao-modal-card">
+    <h3 id="cao-modal-title">提交投稿</h3>
+    <p id="cao-modal-desc">请填写基本信息，品牌编辑团队将在 5 个工作日内回复。</p>
+    <form id="cao-modal-form">
+      <div class="cao-modal-field">
+        <label for="cao-field-name">称呼</label>
+        <input id="cao-field-name" name="name" type="text" placeholder="如何称呼你" required>
+      </div>
+      <div class="cao-modal-field">
+        <label for="cao-field-contact">联系方式</label>
+        <input id="cao-field-contact" name="contact" type="text" placeholder="邮箱或社交账号" required>
+      </div>
+      <div class="cao-modal-field">
+        <label for="cao-field-msg">作品说明</label>
+        <textarea id="cao-field-msg" name="msg" placeholder="作品标题、时长、创作方向等"></textarea>
+      </div>
+      <div class="cao-modal-actions">
+        <button class="cao-btn cao-btn--ghost" type="button" data-cao-close>取消</button>
+        <button class="cao-btn cao-btn--primary" type="submit">提交</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Toast ---------- */
+  var toastEl = document.getElementById('cao-toast');
+  var toastTimer = null;
+  function caoToast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('is-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('is-show'); }, 2000);
+  }
+
+  /* ---------- 移动端导航 ---------- */
+  var burger = document.getElementById('cao-burger');
+  var mobileNav = document.getElementById('cao-mobile-nav');
+  if(burger && mobileNav){
+    burger.addEventListener('click', function(){
+      var open = mobileNav.classList.toggle('is-open');
+      burger.classList.toggle('is-open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    mobileNav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        mobileNav.classList.remove('is-open');
+        burger.classList.remove('is-open');
+        burger.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  /* ---------- 搜索反馈 ---------- */
+  var searchForm = document.getElementById('cao-search-form');
+  var searchInput = document.getElementById('cao-search-input');
+  if(searchForm && searchInput){
+    searchForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var kw = searchInput.value.trim();
+      if(!kw){
+        caoToast('请输入内容或创作者名称');
+        searchInput.focus();
+        return;
+      }
+      var hit = false;
+      var cards = document.querySelectorAll('.cao-v-card h3, .cao-topic-body h3, .cao-creator-name, .cao-story h3');
+      for(var i=0;i<cards.length;i++){
+        if(cards[i].textContent.indexOf(kw) > -1){ hit = true; break; }
+      }
+      if(hit){
+        caoToast('已找到与「' + kw + '」相关的内容');
+      }else{
+        caoToast('暂无匹配结果，可尝试「田野」「手作」等关键词');
+      }
+    });
+  }
+
+  /* ---------- 点赞 / 收藏 ---------- */
+  document.addEventListener('click', function(e){
+    var likeBtn = e.target.closest('[data-cao-like]');
+    if(likeBtn){
+      var base = parseInt(likeBtn.getAttribute('data-count'), 10) || 0;
+      var liked = likeBtn.classList.toggle('is-liked');
+      var num = liked ? base + 1 : base;
+      likeBtn.textContent = '赞 ' + num;
+      caoToast(liked ? '已点赞，感谢支持' : '已取消点赞');
+      return;
+    }
+    var saveBtn = e.target.closest('[data-cao-save]');
+    if(saveBtn){
+      var saved = saveBtn.classList.toggle('is-saved');
+      saveBtn.textContent = saved ? '已收藏' : '收藏';
+      caoToast(saved ? '已加入收藏' : '已取消收藏');
+      return;
+    }
+    var copyBtn = e.target.closest('[data-cao-copy]');
+    if(copyBtn){
+      e.preventDefault();
+      var link = location.origin + location.pathname + '#cao-wall';
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(link).then(function(){
+          caoToast('分享链接已复制');
+        }).catch(function(){
+          caoToast('分享链接已生成，可手动复制');
+        });
+      }else{
+        caoToast('分享链接已生成，可手动复制');
+      }
+      return;
+    }
+    var authorLink = e.target.closest('[data-cao-author]');
+    if(authorLink){
+      e.preventDefault();
+      caoToast('正在打开「' + authorLink.getAttribute('data-cao-author') + '」的主页');
+      return;
+    }
+  });
+
+  /* ---------- 榜单切换 ---------- */
+  var rankData = {
+    hot:[
+      ['《土壤与手》第三集','12.6 万'],
+      ['雨林声景：三十二分钟','9.8 万'],
+      ['天桥下的三小时','8.2 万'],
+      ['从一块泥开始：第十一窑','7.1 万'],
+      ['六点的菜场','5.6 万'],
+      ['小院四季 · 秋分','4.9 万']
+    ],
+    new:[
+      ['阿柚的第一次投稿','1.2 万'],
+      ['叶下：露水与清晨','9,860'],
+      ['土路：脚印与枯叶','8,420'],
+      ['晚归人：稻田黄昏','7,650'],
+      ['旧物志：门环特写','6,980'],
+      ['夜行乐队：篝火与歌','6,140']
+    ],
+    praise:[
+      ['声景地图：湿地篇','98.6 分'],
+      ['手上三月：竹编','97.9 分'],
+      ['土壤与手：第一集','97.4 分'],
+      ['小院四季：春分','96.8 分'],
+      ['城市边缘：清晨清扫','96.1 分'],
+      ['草叶笔记：雨','95.7 分']
+    ]
+  };
+  var rankList = document.getElementById('cao-rank-list');
+  document.querySelectorAll('[data-cao-rank]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('[data-cao-rank]').forEach(function(b){ b.classList.remove('is-on'); });
+      btn.classList.add('is-on');
+      var key = btn.getAttribute('data-cao-rank');
+      var rows = rankData[key] || [];
+      rankList.innerHTML = rows.map(function(row, idx){
+        var top = idx < 3 ? ' cao-rank-no--top' : '';
+        return '<li><span class="cao-rank-no' + top + '">' + (idx+1) + '</span>' +
+               '<span class="cao-rank-name">' + row[0] + '</span>' +
+               '<span class="cao-rank-heat">' + row[1] + '</span></li>';
+      }).join('');
+      caoToast('已切换榜单');
+    });
+  });
+
+  /* ---------- 弹窗 ---------- */
+  var modal = document.getElementById('cao-modal');
+  var modalTitle = document.getElementById('cao-modal-title');
+  var modalDesc = document.getElementById('cao-modal-desc');
+  var modalForm = document.getElementById('cao-modal-form');
+  var modalCard = document.getElementById('cao-modal-card');
+  var lastFocus = null;
+
+  function openModal(type){
+    lastFocus = document.activeElement;
+    if(type === 'share'){
+      modalTitle.textContent = '分享 91cao草网官网';
+      modalDesc.textContent = '可通过微信、微博或复制链接的方式，把官网分享给同样热爱记录的朋友。';
+      modalForm.style.display = 'none';
+      var link = location.origin + location.pathname;
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(link).catch(function(){});
+      }
+    }else{
+      modalTitle.textContent = '提交投稿';
+      modalDesc.textContent = '请填写基本信息，品牌编辑团队将在 5 个工作日内回复。';
+      modalForm.style.display = '';
+    }
+    modal.classList.add('is-open');
+    var focusEl = modalForm.style.display === 'none' ? modalCard : document.getElementById('cao-field-name');
+    if(focusEl && focusEl.focus){ setTimeout(function(){ focusEl.focus(); }, 60); }
+  }
+  function closeModal(){
+    modal.classList.remove('is-open');
+    if(lastFocus && lastFocus.focus){ lastFocus.focus(); }
+  }
+  document.addEventListener('click', function(e){
+    var opener = e.target.closest('[data-cao-open]');
+    if(opener){
+      e.preventDefault();
+      openModal(opener.getAttribute('data-cao-open'));
+      return;
+    }
+    if(e.target.closest('[data-cao-close]') || e.target === modal){
+      closeModal();
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && modal.classList.contains('is-open')){ closeModal(); }
+  });
+  if(modalForm){
+    modalForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.getElementById('cao-field-name').value.trim();
+      closeModal();
+      modalForm.reset();
+      caoToast(name ? ('已收到投稿，感谢 ' + name) : '已收到投稿，感谢支持');
+    });
+  }
+
+  /* ---------- 回到顶部 ---------- */
+  var topBtn = document.getElementById('cao-top-btn');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 520){ topBtn.classList.add('is-show'); }
+    else{ topBtn.classList.remove('is-show'); }
+  }, {passive:true});
+  topBtn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* ---------- 导航当前项高亮 ---------- */
+  var navLinks = document.querySelectorAll('.cao-nav a[href^="#"]');
+  var sections = [];
+  navLinks.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if(el){ sections.push({el:el, link:a}); }
+  });
+  if('IntersectionObserver' in window && sections.length){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          navLinks.forEach(function(a){ a.classList.remove('is-active'); });
+          var target = sections.find(function(s){ return s.el === entry.target; });
+          if(target){ target.link.classList.add('is-active'); }
+        }
+      });
+    }, {rootMargin:'-45% 0px -50% 0px', threshold:0});
+    sections.forEach(function(s){ io.observe(s.el); });
+  }
+})();
+</script>
+</body>
+  </html>
